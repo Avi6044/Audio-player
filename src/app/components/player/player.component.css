@@ -1,0 +1,192 @@
+
+@-moz-keyframes songtitle {
+  0%   { -moz-transform: translateX(100%); }
+  100% { -moz-transform: translateX(-100%); }
+ }
+ @-webkit-keyframes songtitle {
+  0%   { -webkit-transform: translateX(100%); }
+  100% { -webkit-transform: translateX(-100%); }
+ }
+ @keyframes songtitle {
+  0%   { 
+  -moz-transform: translateX(100%); /* Firefox bug fix */
+  -webkit-transform: translateX(100%); /* Firefox bug fix */
+  transform: translateX(100%); 		
+  }
+  100% { 
+  -moz-transform: translateX(-100%); /* Firefox bug fix */
+  -webkit-transform: translateX(-100%); /* Firefox bug fix */
+  transform: translateX(-100%); 
+  }
+ }
+
+ /* @-webkit-keyframes rotation {
+  from {
+      -webkit-transform: rotate(0deg);
+  }
+  to {
+      -webkit-transform: rotate(359deg);
+  }
+} */
+
+
+
+
+@-webkit-keyframes spin1 {
+  0% { -webkit-transform: rotate(0deg);}
+  100% { -webkit-transform: rotate(360deg);}
+  }
+  @-moz-keyframes spin1 {
+  0% { -moz-transform: rotate(0deg);}
+  100% { -moz-transform: rotate(360deg);}
+  }
+  @-o-keyframes spin1 {
+  0% { -o-transform: rotate(0deg);}
+  100% { -o-transform: rotate(360deg);}
+  }
+  @-ms-keyframes spin1 {
+  0% { -ms-transform: rotate(0deg);}
+  100% { -ms-transform: rotate(360deg);}
+  }
+  @-keyframes spin1 {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+  } 
+
+
+.customplayer{
+  /* border: 1px solid #000; */
+  text-align: center;
+  display: inline-block;
+  /* margin: 4rem 0 4rem 0; */
+  width: 600px;
+  padding: 8px;
+  border-radius: 20px;
+  box-shadow: 0 8px 11px -2px #f554;
+
+ background-image: radial-gradient( circle farthest-corner at 0.2% 0%,  rgba(238,9,121,1) 0%, rgba(255,106,0,1) 100.2% );
+
+}
+.customplayer  .album{
+  margin-top: 10px;
+  height: 95px;
+  width: 95px;
+  background-size: cover;
+  float: left;
+
+}
+.customplayer  .album img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.customplayer  .songtitle
+{
+  color: #000;
+  width:476px;
+  overflow:hidden;
+  float:right;
+  
+}
+.customplayer  .songtitle .songtitlehead
+{
+  width: 100%;
+  -moz-transform:translateX(100%);
+  -webkit-transform:translateX(100%);	
+  transform:translateX(100%);
+  -moz-animation: songtitle 15s linear infinite;
+  -webkit-animation: examsongtitleple1 15s linear infinite;
+  animation: songtitle 15s linear infinite;
+}
+.customplayer .controls  span{
+  color: #ffff;
+  margin-right: 10px;
+}
+.customplayer .controls .playbutton{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  text-align: center;
+  margin: auto;
+  font-size: 19px;
+  background: initial;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  color: #ffff;
+  cursor: pointer;
+  border-color: #ffff;
+  padding-left: 9px;
+  margin-left: 56px;
+}
+
+.customplayer .controls .volumebutton{
+  float: right;
+  color: #ffff;
+}
+.customplayer .controls .volumebutton button{
+  border: none;
+  background-color:initial; 
+  color: #ffff;
+  width: 30px;
+}
+.customplayer .controls  .processbar{
+  width: 476px;
+  float: right;
+  color: #ffff;
+}
+.customplayer .controls  .processbar progress {
+  vertical-align: baseline;
+  width: 70%;
+  /* margin-top: 11px; */
+  display: block;
+  float: right;
+}
+.customplayer .controls  .processbar progress:hover{
+  cursor: pointer;
+}
+.customplayer .controls  .processbar mat-slider{
+  width: 76%;
+  color: #ffff;
+  
+}
+.roationimage{
+  -webkit-animation: spin1 2s infinite linear;
+  -moz-animation: spin1 2s infinite linear;
+  -o-animation: spin1 2s infinite linear;
+  -ms-animation: spin1 2s infinite linear;
+  animation: spin1 2s infinite linear;
+      display: block;
+}
+progress[value] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: initial;
+  color: #ffff;
+  height: 5px;
+  margin-top: 10px;
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: initial;
+  border-radius: 2px;
+  border: 1px solid #ffff;
+  color: #ffff;
+}
+
+progress::-webkit-progress-value {
+  background-color: #ffff;
+}
+
+
+/* progress[value]  {
+
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+
+ 
+  border: none;
+
+  
+} */

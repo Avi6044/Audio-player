@@ -1,0 +1,31 @@
+<div class="maincontainer">
+  <mat-card>
+    <!-- <button mat-raised-button (click)="isEditable = !isEditable">
+      {{!isEditable ? 'Enable edit mode' : 'Disable edit mode'}}
+    </button> -->
+    
+    <mat-horizontal-stepper linear #stepper>
+      <mat-step  [editable]="isEditable">
+            <international-phone-number [(ngModel)]="phone_number"  [maxlength]="14" [defaultCountry]="'in'" [required]="true" name="phone_number1" ></international-phone-number>
+            <ng-template matStepLabel>Mobile Number</ng-template>
+        <div class="step1button">
+            <button mat-button matStepperNext (click)="opensneakbar()">Get OTP</button>
+          </div>
+      </mat-step>
+      <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel>OTP Verification</ng-template>
+          <mat-form-field>
+            <input matInput type="text" placeholder="OTP" formControlName="secondCtrl" required (keypress)="keyPress($event)" maxlength="5">
+          </mat-form-field>
+          <div class="step1button">
+           
+            <button mat-button  (click)="gotoHome()" matStepperNext>Done</button>
+          </div>
+        </form>
+      </mat-step>
+
+    </mat-horizontal-stepper>
+    
+  </mat-card>
+</div>

@@ -1,0 +1,48 @@
+<div class="container">
+    <mat-tab-group>
+        <mat-tab label="Sent">
+<div style="margin-top:30px;">
+    <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">No</th>
+                <th scope="col">Tracks
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr  *ngFor="let track of mytrack; let i=index" (click)="playTrack(track.link,track.title)" style="cursor: pointer;">
+                <td>{{i+1}}</td>
+                <td>{{track.title}}</td>
+          
+              </tr>
+            
+            </tbody>
+          </table>
+
+          <!-- <input type="tel"> -->
+
+</div>
+        </mat-tab>
+        <mat-tab label="Receive">
+               <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Tracks
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr  *ngFor="let track of mytrack; let i=index" (click)="playTrack(track.link,track.title)" style="cursor: pointer;">
+                        <td>{{i+1}}</td>
+                        <td>{{track.title}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                   <!-- <audio  src="/assets/music/Struggler - R Nait (DjPunjab.Com).mp3" id="myplayer" ></audio> -->
+               
+        </mat-tab>
+    
+    </mat-tab-group>
+</div>

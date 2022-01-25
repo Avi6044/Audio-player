@@ -1,0 +1,28 @@
+
+<!-- <div *ngIf="disable">
+  hello
+</div> -->
+<div class="customplayer" >
+  <div class="album">
+     <img id="myimage"  src="./assets/images/oldcdimage.png">
+  </div>
+  <audio control controlsList="nodownload" #player="" (ended)="playerEnded()"  class="controls" >
+  </audio>
+  <div class="songtitle">
+    <h3 id="mysongtitle" style="color:#ffff;">{{songtitle}}</h3>
+  </div>
+  <div class="controls">
+      <div class="processbar">
+          <span>{{currenttimenew}}</span>/
+            <span>{{totallengthtrack}}</span>
+          <progress id="seek-obj" value="1" min="0"  max="1"></progress>
+        </div>   
+    <button (click)="songsPlay()" class="playbutton"><i id="playsongsicon" class="fa fa-play" aria-hidden="true"></i></button>
+    <div class="volumebutton"> 
+    <button  (click)="volumeMute()">
+      <i id="volumebuttonicn" class="fa fa-volume-up" aria-hidden="true"></i>
+    </button>
+    <mat-slider id="volume" min="0" max="1" step="0.05" [value]="volumerange"    (input)="change_vol($event)"> </mat-slider>
+    </div>
+  </div>
+</div>   
